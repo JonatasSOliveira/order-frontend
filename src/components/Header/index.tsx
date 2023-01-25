@@ -13,7 +13,7 @@ export default function Header({ title }: HeaderProps) {
 
   return (
     <>
-      <AppBar>
+      <AppBar position="sticky">
         <Toolbar>
           <IconButton
             size="large"

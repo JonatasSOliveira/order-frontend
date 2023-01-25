@@ -39,7 +39,9 @@ function Drawer(props: DrawerProps, ref: React.Ref<DrawerHandle>) {
         onOpen={() => toggleDrawer(true)}
         onClose={() => toggleDrawer(false)}
       >
-        {pageRoutes.map(DrawerItem)}
+        {pageRoutes
+          .filter((pageRoute) => !pageRoute.notDisplayInDrawer)
+          .map(DrawerItem)}
       </SwipeableDrawer>
     </React.Fragment>
   );

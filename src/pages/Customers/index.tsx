@@ -15,6 +15,7 @@ export default function Customers() {
       loadData={getCustomers}
       onPressNew={openCustomerForm}
       buttonLabel="Novo Cliente"
+      displayedAttribute="name"
     />
   );
 }

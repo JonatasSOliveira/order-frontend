@@ -9,7 +9,8 @@ import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 import Customers from "../pages/Customers";
 import Home from "../pages/Home";
 import Orders from "../pages/Orders";
-import PaymentForms from "../pages/PaymentForms";
+import PaymentMethods from "../pages/PaymentMethods";
+import PaymentMethodForm from "../pages/PaymentMethodForm";
 
 export interface PageRoute {
   path: string;
@@ -18,6 +19,7 @@ export interface PageRoute {
   Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
     muiName: string;
   };
+  notDisplayInDrawer?: boolean;
 }
 
 const pageRoutes: PageRoute[] = [
@@ -34,10 +36,17 @@ const pageRoutes: PageRoute[] = [
     Icon: GroupIcon,
   },
   {
-    path: "/payment-forms",
-    Element: PaymentForms,
+    path: "/payment-methods",
+    Element: PaymentMethods,
     name: "Formas de Pagamento",
     Icon: LocalAtmIcon,
+  },
+  {
+    path: "/payment-methods/form",
+    Element: PaymentMethodForm,
+    name: "Forma de Pagamento",
+    Icon: LocalAtmIcon,
+    notDisplayInDrawer: true,
   },
   {
     path: "/orders",
